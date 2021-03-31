@@ -3,59 +3,57 @@
     
     <!-- TEXTS -->
     <div class="texts">
-      <div class="spinner">
 
-        <!-- KEYOCOIN -->
-        <div class="item" data-position="1">
-          <div class="text">
-            <div data-depth="0.1">
-              <h2>KeyoCoin</h2>
-              <p class="highlight"><span>Universal</span><br><span>Travel Rewards</span><br><span>Cryptocurrency</span></p>
-            </div>
+      <!-- KEYOCOIN -->
+      <div class="item" data-position="1">
+        <div class="text">
+          <div data-depth="0.1">
+            <h2>KeyoCoin</h2>
+            <p class="highlight"><span>Universal</span><br><span>Travel Rewards</span><br><span>Cryptocurrency</span></p>
           </div>
         </div>
-
-        <!-- IMPACTPASS -->
-        <div class="item" data-position="2">
-          <div class="text">
-            <div data-depth="0.1">
-              <h2>ImpactPass</h2>
-              <p class="highlight"><span>Social</span><br><span>Impact</span><br><span>Platform</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- KEYOPASS -->
-        <div class="item" data-position="3">
-          <div class="text">
-            <div data-depth="0.1">
-              <h2>KeyoPass</h2>
-              <p class="highlight"><span>Concierge</span><br><span>Travel</span><br><span>App</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- VACATION VOUCHER -->
-        <div class="item" data-position="4">
-          <div class="text">
-            <div data-depth="0.1">
-              <h2>Vacation Voucher</h2>
-              <p class="highlight"><span>Argentine</span><br><span>Ministry of Tourism</span><br><span>COVID–19 Initiative</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- JUNAR -->
-        <div class="item" data-position="5">
-          <div class="text">
-            <div data-depth="0.1">
-              <h2>Junar</h2>
-              <p class="highlight"><span>Data</span><br><span>Platform</span></p>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- IMPACTPASS -->
+      <div class="item" data-position="2">
+        <div class="text">
+          <div data-depth="0.1">
+            <h2>ImpactPass</h2>
+            <p class="highlight"><span>Social</span><br><span>Impact</span><br><span>Platform</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- KEYOPASS -->
+      <div class="item" data-position="3">
+        <div class="text">
+          <div data-depth="0.1">
+            <h2>KeyoPass</h2>
+            <p class="highlight"><span>Concierge</span><br><span>Travel</span><br><span>App</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- VACATION VOUCHER -->
+      <div class="item" data-position="4">
+        <div class="text">
+          <div data-depth="0.1">
+            <h2>Vacation Voucher</h2>
+            <p class="highlight"><span>Argentine</span><br><span>Ministry of Tourism</span><br><span>COVID–19 Initiative</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- JUNAR -->
+      <div class="item" data-position="5">
+        <div class="text">
+          <div data-depth="0.1">
+            <h2>Junar</h2>
+            <p class="highlight"><span>Data</span><br><span>Platform</span></p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- IMAGES -->
@@ -199,24 +197,18 @@ export default {
     animateIn(){
       
       // Texts
-      let texts = document.getElementsByClassName('texts')[0];
-      texts.classList.add('loaded');
-      setTimeout(function(){
-        texts.getElementsByClassName('spinner')[0].style = "transition:transform .375s ease-in-out, opacity .375s ease-in-out;";
-      }, 750);
+      document.getElementsByClassName('texts')[0].classList.add('loaded');
 
       // Images
       let images = document.getElementsByClassName('images')[0];
       images.classList.add('loaded');
-      //images.getElementsByClassName('item').forEach(el => el.style = "transition:transform .375s ease-in-out, opacity .375s ease-in-out;");
+      images.getElementsByClassName('item').forEach(el => el.style = "transition:transform .375s ease-in-out, opacity .375s ease-in-out;");
 
     },
     animateOut(){
 
       // Texts
-      let texts = document.getElementsByClassName('texts')[0];
-      texts.classList.remove('loaded');
-      texts.getElementsByClassName('spinner')[0].style = "transition:transform .750s ease-out, opacity .750s ease-out;";
+      document.getElementsByClassName('texts')[0].classList.remove('loaded');
 
       // AnimateOut
       let images = document.getElementsByClassName('images')[0];
@@ -266,11 +258,8 @@ export default {
 // Texts
 .texts{padding:$page-padding;position:fixed;top:0;left:0;right:0;bottom:0;z-index:600;display:flex;align-items:flex-end;pointer-events:none;
 
-  // Spinner
-  .spinner{display:flex;align-items:flex-end;transition:transform .375s ease-in-out;position:absolute;padding-left:calc(#{$col-w}*2);width:7900px;transform-origin:right center;top:$page-padding;bottom:$page-padding;}
-  
   // Item
-  .item{position:absolute;display:flex;width:7500px;transform-origin:right center;transition:opacity .375s ease-in-out;
+  .item{position:absolute;display:flex;padding-left:calc(#{$col-w}*2);width:7500px;transform-origin:right center;transition:transform .375s ease-in-out, opacity .375s ease-in-out;
     .text{
       & > div{display:flex !important;align-items:flex-end;}
     }
@@ -278,13 +267,6 @@ export default {
     .highlight{opacity:0;transition:opacity .500s ease-in-out;display:inline-block;flex-direction:column;margin-bottom:124px;
       span{display:inline-block;background:$yellow;padding:5px 10px;color:$dark;text-transform:uppercase;font-size:30px;line-height:30px;box-shadow:0 4px 4px 0 transparentize($dark,.8);}
     }
-
-    // Positions
-    &[data-position="5"]{transform:rotate(-10deg);}
-    &[data-position="4"]{transform:rotate(-7.5deg);}
-    &[data-position="3"]{transform:rotate(-5deg);}
-    &[data-position="2"]{transform:rotate(-2.5deg);}
-    &[data-position="1"]{transform:rotate(0);}
 
   }
 
@@ -369,106 +351,91 @@ export default {
 
   // Position 1
   &[data-selected="1"]{
-    .texts{
-      .spinner{transform:rotate(0);}
-      .item[data-position="1"]{
-        h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
-        .highlight{opacity:1;}
-      }
+    .texts .item[data-position="1"]{
+      h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
+      .highlight{opacity:1;}
     }
     .images .item[data-position="1"]{opacity:1;pointer-events:auto !important;}
     .pagination li[data-position="1"] span{transform:scale(1);opacity:.8;}
 
     // Rotation
-    // .texts .item[data-position="3"]{transform:rotate(9deg);}
-    // .texts .item[data-position="4"]{transform:rotate(6deg);}
-    // .texts .item[data-position="5"]{transform:rotate(3deg);}
-    // .texts .item[data-position="1"]{transform:rotate(0deg);}
-    // .texts .item[data-position="2"]{transform:rotate(-3deg);}
+    .texts .item[data-position="3"]{transform:rotate(9deg);}
+    .texts .item[data-position="4"]{transform:rotate(6deg);}
+    .texts .item[data-position="5"]{transform:rotate(3deg);}
+    .texts .item[data-position="1"]{transform:rotate(0deg);}
+    .texts .item[data-position="2"]{transform:rotate(-3deg);}
     
   }
 
   // Position 2
   &[data-selected="2"]{
-    .texts{
-      .spinner{transform:rotate(2.5deg);}
-      .item[data-position="2"]{
-        h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
-        .highlight{opacity:1;}
-      }
+    .texts .item[data-position="2"]{
+      h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
+      .highlight{opacity:1;}
     }
     .images .item[data-position="2"]{opacity:1;pointer-events:auto !important;}
     .pagination li[data-position="2"] span{transform:scale(1);opacity:.8;}
 
     // Rotation
-    // .texts .item[data-position="4"]{transform:rotate(9deg);}
-    // .texts .item[data-position="5"]{transform:rotate(6deg);}
-    // .texts .item[data-position="1"]{transform:rotate(3deg);}
-    // .texts .item[data-position="2"]{transform:rotate(0deg);}
-    // .texts .item[data-position="3"]{transform:rotate(-3deg);}
+    .texts .item[data-position="4"]{transform:rotate(9deg);}
+    .texts .item[data-position="5"]{transform:rotate(6deg);}
+    .texts .item[data-position="1"]{transform:rotate(3deg);}
+    .texts .item[data-position="2"]{transform:rotate(0deg);}
+    .texts .item[data-position="3"]{transform:rotate(-3deg);}
     
   }
 
   // Position 3
   &[data-selected="3"]{
-    .texts{
-      .spinner{transform:rotate(5deg);}
-      .item[data-position="3"]{
-        h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
-        .highlight{opacity:1;}
-      }
+    .texts .item[data-position="3"]{
+      h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
+      .highlight{opacity:1;}
     }
     .images .item[data-position="3"]{opacity:1;pointer-events:auto !important;}
     .pagination li[data-position="3"] span{transform:scale(1);opacity:.8;}
 
     // Rotation
-    // .texts .item[data-position="5"]{transform:rotate(9deg);}
-    // .texts .item[data-position="1"]{transform:rotate(6deg);}
-    // .texts .item[data-position="2"]{transform:rotate(3deg);}
-    // .texts .item[data-position="3"]{transform:rotate(0deg);}
-    // .texts .item[data-position="4"]{transform:rotate(-3deg);}
+    .texts .item[data-position="5"]{transform:rotate(9deg);}
+    .texts .item[data-position="1"]{transform:rotate(6deg);}
+    .texts .item[data-position="2"]{transform:rotate(3deg);}
+    .texts .item[data-position="3"]{transform:rotate(0deg);}
+    .texts .item[data-position="4"]{transform:rotate(-3deg);}
 
   }
 
   // Position 4
   &[data-selected="4"]{
-    .texts{
-      .spinner{transform:rotate(7.5deg);}
-      .item[data-position="4"]{
-        h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
-        .highlight{opacity:1;}
-      }
+    .texts .item[data-position="4"]{
+      h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
+      .highlight{opacity:1;}
     }
     .images .item[data-position="4"]{opacity:1;pointer-events:auto !important;}
     .pagination li[data-position="4"] span{transform:scale(1);opacity:.8;}
 
     // Rotation
-    // .texts .item[data-position="1"]{transform:rotate(9deg);}
-    // .texts .item[data-position="2"]{transform:rotate(6deg);}
-    // .texts .item[data-position="3"]{transform:rotate(3deg);}
-    // .texts .item[data-position="4"]{transform:rotate(0deg);}
-    // .texts .item[data-position="5"]{transform:rotate(-3deg);}    
+    .texts .item[data-position="1"]{transform:rotate(9deg);}
+    .texts .item[data-position="2"]{transform:rotate(6deg);}
+    .texts .item[data-position="3"]{transform:rotate(3deg);}
+    .texts .item[data-position="4"]{transform:rotate(0deg);}
+    .texts .item[data-position="5"]{transform:rotate(-3deg);}    
 
   }
 
   // Position 5
   &[data-selected="5"]{
-    .texts{
-      .spinner{transform:rotate(10deg);}
-      .item[data-position="5"]{
-        h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
-        .highlight{opacity:1;}
-      }
+    .texts .item[data-position="5"]{
+      h2{@include text-stroke(0);color:$light;text-shadow:0 0 35px transparentize($dark,.6);}
+      .highlight{opacity:1;}
     }
     .images .item[data-position="5"]{opacity:1;pointer-events:auto !important;}
     .pagination li[data-position="5"] span{transform:scale(1);opacity:.8;}
 
     // Rotation
-    // .texts .item[data-position="2"]{transform:rotate(9deg);}
-    // .texts .item[data-position="3"]{transform:rotate(6deg);}
-    // .texts .item[data-position="4"]{transform:rotate(3deg);}
-    // .texts .item[data-position="5"]{transform:rotate(0deg);}
-    // .texts .item[data-position="1"]{transform:rotate(-3deg);}
+    .texts .item[data-position="2"]{transform:rotate(9deg);}
+    .texts .item[data-position="3"]{transform:rotate(6deg);}
+    .texts .item[data-position="4"]{transform:rotate(3deg);}
+    .texts .item[data-position="5"]{transform:rotate(0deg);}
+    .texts .item[data-position="1"]{transform:rotate(-3deg);}
 
   }
 
@@ -482,8 +449,7 @@ export default {
     
     // Initial State
     opacity:0;transition:opacity .375s ease-in-out;
-    //.item{transition-duration:.750s;transition-timing-function:ease-out;}
-    .spinner{transition-duration:1s;transition-timing-function:ease-out;}
+    .item{transition-duration:.750s;transition-timing-function:ease-out;}
 
     // Loaded
     &.loaded{opacity:1;}
@@ -492,97 +458,91 @@ export default {
 
   // Position 1
   &[data-selected="1"] .texts{
-    .spinner{transform:rotate(10deg);}
-    // .item[data-position="4"]{transform:rotate(0deg);}
-    // .item[data-position="5"]{transform:rotate(-3deg);}
-    // .item[data-position="1"]{transform:rotate(-6deg);}
-    // .item[data-position="2"]{transform:rotate(-9deg);}
-    // .item[data-position="3"]{transform:rotate(-12deg);}
+    .item[data-position="4"]{transform:rotate(0deg);}
+    .item[data-position="5"]{transform:rotate(-3deg);}
+    .item[data-position="1"]{transform:rotate(-6deg);}
+    .item[data-position="2"]{transform:rotate(-9deg);}
+    .item[data-position="3"]{transform:rotate(-12deg);}
     
     // Loaded
     &.loaded{
-      .spinner{transform:rotate(0);}
-      // .item[data-position="4"]{transform:rotate(6deg);}
-      // .item[data-position="5"]{transform:rotate(3deg);}
-      // .item[data-position="1"]{transform:rotate(0deg);}
-      // .item[data-position="2"]{transform:rotate(-3deg);}
-      // .item[data-position="3"]{transform:rotate(-6deg);}
+      .item[data-position="4"]{transform:rotate(6deg);}
+      .item[data-position="5"]{transform:rotate(3deg);}
+      .item[data-position="1"]{transform:rotate(0deg);}
+      .item[data-position="2"]{transform:rotate(-3deg);}
+      .item[data-position="3"]{transform:rotate(-6deg);}
     }
   }
 
   // Position 2
   &[data-selected="2"] .texts{
-    // .item[data-position="5"]{transform:rotate(0deg);}
-    // .item[data-position="1"]{transform:rotate(-3deg);}
-    // .item[data-position="2"]{transform:rotate(-6deg);}
-    // .item[data-position="3"]{transform:rotate(-9deg);}
-    // .item[data-position="4"]{transform:rotate(-12deg);}
+    .item[data-position="5"]{transform:rotate(0deg);}
+    .item[data-position="1"]{transform:rotate(-3deg);}
+    .item[data-position="2"]{transform:rotate(-6deg);}
+    .item[data-position="3"]{transform:rotate(-9deg);}
+    .item[data-position="4"]{transform:rotate(-12deg);}
     
     // Loaded
     &.loaded{
-      //.spinner{transform:rotate(2.5deg);}
-      // .item[data-position="5"]{transform:rotate(6deg);}
-      // .item[data-position="1"]{transform:rotate(3deg);}
-      // .item[data-position="2"]{transform:rotate(0deg);}
-      // .item[data-position="3"]{transform:rotate(-3deg);}
-      // .item[data-position="4"]{transform:rotate(-6deg);}
+      .item[data-position="5"]{transform:rotate(6deg);}
+      .item[data-position="1"]{transform:rotate(3deg);}
+      .item[data-position="2"]{transform:rotate(0deg);}
+      .item[data-position="3"]{transform:rotate(-3deg);}
+      .item[data-position="4"]{transform:rotate(-6deg);}
     }
   }
 
   // Position 1
   &[data-selected="3"] .texts{
-    // .item[data-position="1"]{transform:rotate(0deg);}
-    // .item[data-position="2"]{transform:rotate(-3deg);}
-    // .item[data-position="3"]{transform:rotate(-6deg);}
-    // .item[data-position="4"]{transform:rotate(-9deg);}
-    // .item[data-position="5"]{transform:rotate(-12deg);}
+    .item[data-position="1"]{transform:rotate(0deg);}
+    .item[data-position="2"]{transform:rotate(-3deg);}
+    .item[data-position="3"]{transform:rotate(-6deg);}
+    .item[data-position="4"]{transform:rotate(-9deg);}
+    .item[data-position="5"]{transform:rotate(-12deg);}
     
     // Loaded
     &.loaded{
-      //.spinner{transform:rotate(-5deg);}
-      // .item[data-position="1"]{transform:rotate(6deg);}
-      // .item[data-position="2"]{transform:rotate(3deg);}
-      // .item[data-position="3"]{transform:rotate(0deg);}
-      // .item[data-position="4"]{transform:rotate(-3deg);}
-      // .item[data-position="5"]{transform:rotate(-6deg);}
+      .item[data-position="1"]{transform:rotate(6deg);}
+      .item[data-position="2"]{transform:rotate(3deg);}
+      .item[data-position="3"]{transform:rotate(0deg);}
+      .item[data-position="4"]{transform:rotate(-3deg);}
+      .item[data-position="5"]{transform:rotate(-6deg);}
     }
   }
 
   // Position 1
   &[data-selected="4"] .texts{
-    // .item[data-position="2"]{transform:rotate(0deg);}
-    // .item[data-position="3"]{transform:rotate(-3deg);}
-    // .item[data-position="4"]{transform:rotate(-6deg);}
-    // .item[data-position="5"]{transform:rotate(-9deg);}
-    // .item[data-position="1"]{transform:rotate(-12deg);}
+    .item[data-position="2"]{transform:rotate(0deg);}
+    .item[data-position="3"]{transform:rotate(-3deg);}
+    .item[data-position="4"]{transform:rotate(-6deg);}
+    .item[data-position="5"]{transform:rotate(-9deg);}
+    .item[data-position="1"]{transform:rotate(-12deg);}
     
     // Loaded
     &.loaded{
-      //.spinner{transform:rotate(-7.5deg);}
-      // .item[data-position="2"]{transform:rotate(6deg);}
-      // .item[data-position="3"]{transform:rotate(3deg);}
-      // .item[data-position="4"]{transform:rotate(0deg);}
-      // .item[data-position="5"]{transform:rotate(-3deg);}
-      // .item[data-position="1"]{transform:rotate(-6deg);}
+      .item[data-position="2"]{transform:rotate(6deg);}
+      .item[data-position="3"]{transform:rotate(3deg);}
+      .item[data-position="4"]{transform:rotate(0deg);}
+      .item[data-position="5"]{transform:rotate(-3deg);}
+      .item[data-position="1"]{transform:rotate(-6deg);}
     }
   }
 
   // Position 1
   &[data-selected="5"] .texts{
-    // .item[data-position="3"]{transform:rotate(0deg);}
-    // .item[data-position="4"]{transform:rotate(-3deg);}
-    // .item[data-position="5"]{transform:rotate(-6deg);}
-    // .item[data-position="1"]{transform:rotate(-9deg);}
-    // .item[data-position="2"]{transform:rotate(-12deg);}
+    .item[data-position="3"]{transform:rotate(0deg);}
+    .item[data-position="4"]{transform:rotate(-3deg);}
+    .item[data-position="5"]{transform:rotate(-6deg);}
+    .item[data-position="1"]{transform:rotate(-9deg);}
+    .item[data-position="2"]{transform:rotate(-12deg);}
     
     // Loaded
     &.loaded{
-      //.spinner{transform:rotate(-10deg);}
-      // .item[data-position="3"]{transform:rotate(6deg);}
-      // .item[data-position="4"]{transform:rotate(3deg);}
-      // .item[data-position="5"]{transform:rotate(0deg);}
-      // .item[data-position="1"]{transform:rotate(-3deg);}
-      // .item[data-position="2"]{transform:rotate(-6deg);}
+      .item[data-position="3"]{transform:rotate(6deg);}
+      .item[data-position="4"]{transform:rotate(3deg);}
+      .item[data-position="5"]{transform:rotate(0deg);}
+      .item[data-position="1"]{transform:rotate(-3deg);}
+      .item[data-position="2"]{transform:rotate(-6deg);}
     }
   }
 
@@ -591,14 +551,14 @@ export default {
 
     // Initial State
     opacity:0;
-    transform: rotateZ(0) rotateY(-90deg);
-    transition:opacity .500s ease-in-out, transform .750s ease-in-out;
+    transform: rotateY( -90deg );
+    transition:opacity .375s ease-in-out, transform .500s ease-in-out;
     transform-origin: right center;
     
     // Loaded
     &.loaded{
       opacity:1;
-      transform: rotateZ(-1deg) rotateY(0);
+      transform: rotateY( 0 );
     }
 
   }
