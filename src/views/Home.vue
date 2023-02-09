@@ -141,7 +141,7 @@
 <script>
 // @ is an alias to /src
 import Parallax from 'parallax-js';
-import { gsap } from "gsap";
+//import { gsap } from "gsap";
 
 export default {
   name: 'Home',
@@ -264,7 +264,8 @@ export default {
 @import '~@/assets/styles/mixins.scss';
 
 // Texts
-.texts{padding:$page-padding;position:fixed;top:0;left:0;right:0;bottom:0;z-index:600;display:flex;align-items:flex-end;pointer-events:none;
+.texts{padding:$page-padding;position:fixed;top:0;left:0;right:0;bottom:0;z-index:600;display:flex;align-items:flex-end;
+  //pointer-events:none;
 
   // Spinner
   .spinner{display:flex;align-items:flex-end;transition:transform .375s ease-in-out;position:absolute;padding-left:calc(#{$col-w}*2);width:7900px;transform-origin:right center;top:$page-padding;bottom:$page-padding;}
@@ -529,7 +530,7 @@ export default {
     }
   }
 
-  // Position 1
+  // Position 3
   &[data-selected="3"] .texts{
     // .item[data-position="1"]{transform:rotate(0deg);}
     // .item[data-position="2"]{transform:rotate(-3deg);}
@@ -548,7 +549,7 @@ export default {
     }
   }
 
-  // Position 1
+  // Position 4
   &[data-selected="4"] .texts{
     // .item[data-position="2"]{transform:rotate(0deg);}
     // .item[data-position="3"]{transform:rotate(-3deg);}
@@ -567,7 +568,7 @@ export default {
     }
   }
 
-  // Position 1
+  // Position 5
   &[data-selected="5"] .texts{
     // .item[data-position="3"]{transform:rotate(0deg);}
     // .item[data-position="4"]{transform:rotate(-3deg);}
@@ -602,6 +603,23 @@ export default {
     }
 
   }
+
+}
+
+// Responsive
+@media screen and (max-width:1600px){
+  
+  // Texts
+  .texts{
+    .item{
+      h2{font-size:200px;}
+      .highlight{margin-bottom:100px;
+        span{font-size:25px;line-height:25px;}
+      }
+      &[data-position="4"]{margin-left:-$page-padding;}
+    }
+  }
+
 
 }
 </style>
