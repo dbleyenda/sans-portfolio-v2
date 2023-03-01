@@ -1,0 +1,95 @@
+/*
+ * Home Hero
+*/
+
+@import 'assets/mixins/toRem.scss';
+@import 'assets/mixins/image2x.scss';
+
+// Styles
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1{
+    font-size: toRem(50);
+    line-height: 72px;
+    text-transform: lowercase;
+    color: var(--yellow);
+    transform: rotate(-1deg);
+    font-weight: normal;
+    .text{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      strong {
+        font-weight: normal;
+        display: inline-block;
+        transform: translateY(-100%);
+        animation: text-chopped-in .350s ease-in-out 0s forwards;
+      }
+      span {
+        padding: 0 20px; 
+        white-space: nowrap;
+        display: inline-block;
+        overflow: hidden;
+        &:first-child { 
+          &:first-letter { 
+            text-transform: uppercase;
+          }
+        }
+        &:nth-child(2) {
+          position: relative;
+          &:before{
+            content: "";
+            height: 25px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) rotate(-1deg) scale(1);
+            left: 0;
+            right: 0;
+            background: var(--blue);
+            z-index: -1;
+            opacity: 0;
+            animation: opacity-in .350s ease-in-out .200s forwards;
+          }
+          strong{animation-delay: .100s;}
+        }
+        &:nth-child(3) strong {animation-delay: .200s;}
+      }
+    }
+    .headshot{
+      display: block;
+      width: toRem(250);
+      position: absolute;
+      z-index : -2;
+      top: -60%;
+      left: toRem(65);
+      transform: scale(0);
+      animation: scale-in .350s ease-in-out .200s forwards;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  button{
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+  }
+
+  // Below XL
+  @media screen and (max-width:1440px) {
+    h1 {
+      font-size: toRem(40);
+      line-height: 60px;
+    }
+  }
+  @media screen and (max-width:1200px) {
+    h1 {
+      font-size: toRem(35);
+      line-height: 55px;
+    }
+  }
+
+}

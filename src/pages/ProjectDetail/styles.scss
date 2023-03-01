@@ -1,0 +1,19 @@
+/*
+ * Project Detail Styles
+*/
+
+.detail-container {
+  .section-info {
+    overflow: hidden;
+    position: relative;
+    clip-path: inset(0 0 0 0);
+    .scroll-progress {
+      position: fixed;
+      top: 95px;
+      left: 95px;
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

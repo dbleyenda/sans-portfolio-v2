@@ -1,0 +1,282 @@
+{
+  "last_update": "2023-02-14",
+  "projects": [
+    {
+      "id": 1,
+      "slug": "keyocoin-cryptocurrency-launch-case-study",
+      "has_navigation": true,
+      "images": [
+        {
+          "index": 0,
+          "1x": "",
+          "2x": ""
+        },
+        {
+          "index": 1,
+          "1x": "",
+          "2x": ""
+        },
+        {
+          "index": 2,
+          "1x": "",
+          "2x": ""
+        },
+        {
+          "index": 3,
+          "1x": "",
+          "2x": ""
+        }
+      ],
+      "overview": {
+        "client": "",
+        "heading": "",
+        "sub_heading": "",
+        "title": "Overview",
+        "description": "",
+        "challenge": "",
+        "solution": "",
+        "details": [
+          {
+            "title": "My roles",
+            "text": [""]
+          },
+          {
+            "title": "Team",
+            "text": [""]
+          },
+          {
+            "title": "Project Duration",
+            "text": [""]
+          }
+        ],
+        "images": [
+          {
+            "name": false,
+            "urls": {
+              "1x": "https://via.placeholder.com/1466x1336",
+              "2x": "https://via.placeholder.com/2932x2672"
+            },
+            "alt": "Final Design",
+            "caption": false,
+            "background": "gradient",
+            "shadow": true,
+            "full_width": true
+          }
+        ]
+      },
+      "content": {
+        "research": {
+          "section": {
+            "title": "Research",
+            "number": "1"
+          },
+          "kickoff": {
+            "type": "image_right",
+            "title": "Kickoff",
+            "text": [""],
+            "image": {
+              "name": "Client Questions",
+              "urls": {
+                "1x": "",
+                "2x": ""
+              },
+              "alt": "",
+              "caption": {
+                "text": [""],
+                "inside": false
+              }
+            }
+          },
+          "secondary_research": {
+            "type": "image",
+            "title": "Secondary Research",
+            "text": [""],
+            "images": [
+              {
+                "name": "Client Questions",
+                "urls": {
+                  "1x": "",
+                  "2x": ""
+                },
+                "alt": "",
+                "caption": {
+                  "text": [""],
+                  "inside": true
+                },
+                "background": true,
+                "shadow": false,
+                "full_width": false
+              }
+            ]
+          }
+        },
+        "ideation": {},
+        "design": {},
+        "development": {},
+        "launch": {}
+      }
+    },
+    {
+      "id": 2,
+      "slug": "junar-webservice-tool-redesign-case-study",
+      "has_navigation": false,
+      "images": [
+        {
+          "index": 0,
+          "1x": "",
+          "2x": ""
+        },
+        {
+          "index": 1,
+          "1x": "",
+          "2x": ""
+        },
+        {
+          "index": 2,
+          "1x": "",
+          "2x": ""
+        },
+        {
+          "index": 3,
+          "1x": "",
+          "2x": ""
+        }
+      ],
+      "overview": {
+        "client": "Junar",
+        "heading": "Web Service Tool Redesign",
+        "sub_heading": "Case Study",
+        "title": "Overview",
+        "description": "Junar is a technology startup company making a data platform product with a leading-edge technology on data processing and transformations. The product let users transform hard-to-find and useless data sources into dynamic tables, visualizations, maps, dashboards and APIs.",
+        "challenge": {
+          "title": "The Challenge",
+          "text": [
+            "The product has a tool that allows users to configure REST/JSON web services as data sources.",
+            "This tool, which is basically a 2-step long form, has been live for several years and the Customer Success team has gathered feedback indicating that there is room for improvement."
+          ]
+        },
+        "solution": {
+          "title": "The Solution",
+          "text": [
+            "I delivered a design solution that solves the necessities the customers reported in the past. I developed it, and contributed to the QA testing and the deployment to production."
+          ]
+        },
+        "details": [
+          {
+            "title": "My role",
+            "text": ["Solo designer and developer"]
+          },
+          {
+            "title": "Client",
+            "text": ["Junar"]
+          },
+          {
+            "title": "Year",
+            "text": ["2020"]
+          },
+          {
+            "title": "Deliverables",
+            "text": ["UX / UI / Web development"]
+          }
+        ],
+        "images": [
+          {
+            "name": false,
+            "urls": {
+              "1x": "https://via.placeholder.com/1466x1336",
+              "2x": "https://via.placeholder.com/2932x2672"
+            },
+            "alt": "Final Design",
+            "caption": false,
+            "background": "gradient",
+            "shadow": true,
+            "full_width": true
+          }
+        ]
+      },
+      "content": {
+        "challenge": {
+          "section": {
+            "title": "The Challenge"
+          },
+          "issues_detected": {
+            "type": "image_grid",
+            "title": false,
+            "text": false,
+            "images": [
+              {
+                "name": "Connection Setup",
+                "urls": {
+                  "1x": "",
+                  "2x": ""
+                },
+                "alt": "",
+                "caption": {
+                  "text": [""],
+                  "inside": false
+                },
+                "background": false,
+                "shadow": false,
+                "full_width": false
+              },
+              {
+                "name": "Response",
+                "urls": {
+                  "1x": "",
+                  "2x": ""
+                },
+                "alt": "",
+                "caption": {
+                  "text": [""],
+                  "inside": false
+                },
+                "background": false,
+                "shadow": false,
+                "full_width": false
+              },
+              {
+                "name": "Output",
+                "urls": {
+                  "1x": "",
+                  "2x": ""
+                },
+                "alt": "",
+                "caption": {
+                  "text": [""],
+                  "inside": false
+                },
+                "background": false,
+                "shadow": false,
+                "full_width": false
+              }
+            ]
+          },
+          "customer_journey": {
+            "type": "image",
+            "title": false,
+            "text": false,
+            "images": [
+              {
+                "name": "Customer Journey",
+                "urls": {
+                  "1x": "",
+                  "2x": ""
+                },
+                "alt": "",
+                "caption": {
+                  "text": [""],
+                  "inside": false
+                },
+                "background": false,
+                "shadow": false,
+                "full_width": false
+              }
+            ]
+          }
+        },
+        "solution": {},
+        "summary": {}
+      }
+    }
+  ]
+}

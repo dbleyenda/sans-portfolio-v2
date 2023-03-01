@@ -1,0 +1,57 @@
+/*
+ * Contact Styles
+ */
+
+// Footer
+.contact-container {
+  text-transform: lowercase;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .top{
+    flex-grow: 1;
+    padding: 95px;
+    .text-section a{
+      font-size: 3rem;
+      color: var(--light);
+      &:hover {
+        color: var(--light-hover);
+      }
+    }
+  }
+  footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    .left,
+    .right{
+      &, 
+      & ul{
+        align-items: center;
+        display: flex;
+      }
+      li{
+        color: var(--yellow-opacity);
+        padding: 0 1rem;
+        &, 
+        a{
+          line-height: 24px;
+          align-items: center;
+          display: flex;
+        } 
+        a{
+          color: var(--yellow);
+          svg path{
+            fill: var(--yellow);
+          }  
+          &:hover{
+            color: var(--yellow-opacity);
+            svg path{
+              fill: var(--yellow-opacity);
+            }
+          }
+        }       
+      }
+    }
+  }
+}

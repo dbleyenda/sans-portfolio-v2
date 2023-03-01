@@ -1,0 +1,26 @@
+/* 
+ * Spinner Component Styles
+*/
+
+.spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  svg {
+    transform: scale(35%);
+    opacity: .75;
+  }
+}
+
+// Layout
+.layout .spinner{
+  position: fixed;
+  z-index: 1;
+}

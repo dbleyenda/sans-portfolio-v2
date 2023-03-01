@@ -1,0 +1,190 @@
+/*
+ * General Styles
+*/
+
+// Libs
+@use '~minireset.css/minireset.min';
+
+// Mixins
+@import './assets/mixins/toRem.scss';
+@import './assets/mixins/image2x.scss';
+
+// Fonts
+@font-face {
+  font-family: 'font-title';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Morganite'), url('./assets/fonts/Font-Title.woff') format('woff');
+}
+@font-face {
+  font-family: 'font-heading';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Morganite'), url('./assets/fonts/Font-Heading.woff') format('woff');
+}
+@font-face {
+  font-family: 'font-text';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Monument Extended'), url('./assets/fonts/Font-Text.woff') format('woff');
+}
+
+// Animations
+@keyframes text-chopped-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes opacity-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Custom Properties
+:root {
+  --yellow: #ffe800;
+  --yellow-opacity: rgba(255, 232, 0, .5);
+  --yellow-dark: #e9d400;
+  --blue: #0000ff;
+  --blue-opacity: rgba(0, 0, 255, .75);
+  --dark: #1a2836;
+  --light: #e8fff5;
+  --light-hover: #b6e6d1;
+  --white: #ffffff;
+  --gray: #fafafa;
+  --gradient-from: #202bcb;
+  --gradient-to: #0e139b;
+}
+
+// Common
+html{
+  overflow-x: hidden;
+}
+html,
+body {
+  background-color: var(--dark);
+  color: var(--white);
+  font-size: 16px;
+}
+* {
+  font-family: 'font-text', Helvetica, Arial, sans-serif;
+}
+a {
+  color: var(--blue);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .375s ease-in-out;
+  svg path{
+    transition: fill .375s ease-in-out;
+    fill: var(--blue);
+  }
+  &:hover{
+    color: var(--blue-opacity);
+    svg path{
+      fill: var(--blue-opacity);
+    }
+  }
+}
+button {
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  color: var(--yellow);
+  cursor: pointer;
+  outline: none;
+  transition: color .375s ease-in-out;
+  svg path{
+    transition: fill .375s ease-in-out;
+    fill: var(--yellow);
+  }
+  &:hover{
+    color: var(--yellow-opacity);
+    svg path{
+      fill: var(--yellow-opacity);
+    }
+  }
+}
+
+// Structure
+.layout,
+.page{
+  background-image: url(https://www.ignaciosans.com/portfolio-images/bg_noise.png);
+  @include image2x("https://www.ignaciosans.com/portfolio-images/bg_noise@2x.png", toRem(500), toRem(500));
+  min-height: 100vh;
+}
+main {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  &.is-loading {
+    overflow: hidden;
+    height: 100vh;
+  }
+  section{
+    padding: 95px;
+  }
+}
+
+// Lowercase
+.lowercase {
+  text-transform: lowercase;
+}
+
+// Text Section
+.text-section {
+  padding-left: toRem(140);
+  position: relative;
+  &:before {
+    background: var(--yellow);
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: toRem(100);
+  }
+}
+
+// Highlighted Text
+.highlighted {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  span {
+    background: var(--yellow);
+    color: var(--dark);
+    display: inline-flex;
+    padding: 0.5rem 1rem 0;
+    &:last-child,
+    &:only-child {
+      padding-bottom: 0.5rem;
+    }
+  }
+  &.big {
+    font-size: 1.5rem;
+  }
+}
+
+// Section Info
+.section-info {
+  font-family: 'Public Sans', Helvetica, Arial, sans-serif;
+  background: var(--white);
+  position: relative;
+  z-index: 30;
+}

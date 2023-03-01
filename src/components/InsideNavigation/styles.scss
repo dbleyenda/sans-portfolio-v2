@@ -1,0 +1,66 @@
+/*
+ * Inside Navigation Styles
+*/
+
+// Mixins
+@import 'assets/mixins/toRem.scss';
+
+// Styles
+.inside-navigation {
+  animation: opacity-in .375s ease-in-out .500s forwards;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  transform-origin: top left;
+  z-index: 20;
+  transform: rotate(-90deg) translateX(-100%);
+
+  // SVG
+  .scroll-progress {
+    position: absolute;
+    top: 95px;
+    right: 95px;
+  }
+  
+  // Logo
+  .logo {
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    transform-origin: center center;
+    transition: .375s ease-in-out;
+    transition-property: transform, opacity;
+    line-height: 80px;
+    text-transform: lowercase;
+    font-size: toRem(20);
+    opacity: 1;
+    a{
+      color: var(--yellow);
+      &:hover{
+        color: var(--yellow-opacity);
+      }
+    }
+  }
+
+  // Section Text
+  .section-text {
+    color: var(--yellow);
+    position: absolute;
+    left: 95px;
+    top: 95px;
+    opacity: .3;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 80px;
+    transform: scale(1);
+    transition: .375s ease-in-out;
+    transition-property: transform, opacity;
+    transform-origin: center center;
+  }
+
+}
+
+

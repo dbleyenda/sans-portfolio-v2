@@ -1,0 +1,41 @@
+/*
+ * Footer Styles
+ */
+
+// Footer
+footer{
+  text-transform: lowercase;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  .left,
+  .right{
+    &, 
+    & ul{
+      align-items: center;
+      display: flex;
+    }
+    li{
+      color: var(--yellow-opacity);
+      padding: 0 1rem;
+      &, 
+      a{
+        line-height: 24px;
+        align-items: center;
+        display: flex;
+      } 
+      a{
+        color: var(--yellow);
+        svg path{
+          fill: var(--yellow);
+        }  
+        &:hover{
+          color: var(--yellow-opacity);
+          svg path{
+            fill: var(--yellow-opacity);
+          }
+        }
+      }       
+    }
+  }
+}

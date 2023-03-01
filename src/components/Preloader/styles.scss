@@ -1,0 +1,82 @@
+/*
+ * Preloader Component Styles
+*/
+
+// Mixins
+@import 'assets/mixins/toRem.scss';
+
+// Styles
+.preloader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  h1{
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-2deg);
+    transform-origin: center right;
+    color: var(--yellow);
+    font-size: 33px;
+    .numbers,
+    .text{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      strong{
+        display: inline-block;
+      }
+    }
+    strong {
+      overflow: hidden;
+      font-weight: normal;
+      span {
+       transition: transform .375s ease-out;
+       display: inline-block;
+      }
+    }
+    .text strong span {
+      transform: translateY(100%);
+    }
+  }
+  .lines-bg{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    transform-origin: center 0;
+    opacity: .2;
+    clip-path: circle(0%);
+    svg{
+      left: 50%;
+      width: 100vw;
+      min-width: 1200px;
+      height: calc((9*100vw)/16 + 12%);
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+    }
+    &.initial{
+      opacity: 1;
+    }
+    &.dark{
+      z-index: 3;
+      opacity: 1;
+      svg path{
+        fill: var(--dark) !important;
+      }
+    }
+    &.reverse{
+      svg path{
+        fill: url(#b);
+      }
+      z-index: 4;
+    }
+  }
+}

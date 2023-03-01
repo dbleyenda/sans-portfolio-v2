@@ -1,0 +1,59 @@
+/*
+ * Scroll Progress Styles
+*/
+
+.scroll-progress {
+  display: block;
+  width: 80px;
+  height: 80px;
+  path {
+    fill: var(--yellow);
+    transition: fill .375s ease-in-out;
+  }
+  circle {
+    stroke-dashoffset: 0;
+    stroke-width: 3px;
+    fill: none;
+    &.bg {
+      stroke: var(--yellow);
+      opacity: 0.3;
+    }
+    &.indicator {
+      stroke: var(--yellow);
+    }
+  }
+  .close {
+    transform: rotate(0deg);
+    transform-origin: center center;
+    transition: transform .375s ease-in-out;
+  }
+  &:hover {
+    path {
+      fill: var(--yellow-dark);
+    }
+    .close {
+      transform: rotate(-180deg);
+    }
+  }
+
+  // Blue Color
+  &.blueish {
+    path {
+      fill: var(--blue);
+    }
+    circle {
+      &.bg {
+        stroke: var(--blue);
+      }
+      &.indicator {
+        stroke: var(--blue);
+      }
+    }
+    &:hover {
+      path {
+        fill: var(--blue-opacity);
+      }
+    }
+  }
+
+}
