@@ -3,7 +3,7 @@
  */
 
 // Libs
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 
 // Styles
